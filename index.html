@@ -1,4 +1,21 @@
-<h2>hello</h2>
-<h3>asdfdsf</h3>
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 
-<p>dfhsdhjfsdahf</p>
+    <link rel="stylesheet" href="Content/style.css">
+    <script src="Scripts/Libs/angular-1.7.8/angular.min.js"></script>
+    <script src="Scripts/myAppController.js"></script>
+</head>
+<body ng-controller="myAppController as main">
+    <div class="container">
+        <input type="checkbox" ng-repeat="item in main.list" ng-model="item.value">
+    </div>
+    <div class="container">
+        <div class="div{{(($index + 1) % 3) == 0 ? 3 : ($index + 1) % 3}}" ng-repeat="item in main.list" ng-if="item.value">{{item.name}}</div>
+    </div>
+</body>
+</html>
